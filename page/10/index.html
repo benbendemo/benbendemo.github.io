@@ -306,6 +306,213 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://bigbigben.com/2018/04/02/to-sql-error-fixed/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="大西洋暖流">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大西洋暖流">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/02/to-sql-error-fixed/" itemprop="url">成功解决pandas.DataFrame.to_sql写入MySQL报错1170问题!</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T11:04:48+08:00">
+                2018-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/02/to-sql-error-fixed/" class="leancloud_visitors" data-flag-title="成功解决pandas.DataFrame.to_sql写入MySQL报错1170问题!">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  745
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div id="container-openwrite">
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="/2018/04/02/to-sql-error-fixed/nghia-le-57365-unsplash.jpg" alt=""></p>
+<p>（Photo by <a href="https://unsplash.com/photos/V3DokM1NQcs?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="external">Nghia Le</a> on <a href="https://unsplash.com/search/photos/victory?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="external">Unsplash</a>）</p>
+<p>上周五遇到pandas.DataFrame.to_sql写入Mysql数据库报错1170问题（详见：<a href="/2018/03/30/pandas-dataframe-to-sql-error/">pandas.DataFrame.to_sql写入MySQL报错1170</a>），卡了我一整天；周六联系<a href="https://github.com/jimmysoa" target="_blank" rel="external">Tushare作者米哥</a>，在用户交流群里，发帖求助，米哥给了一些建议，我尝试了一下，报错依然存在；周日查<a href="http://docs.sqlalchemy.org/en/latest/" target="_blank" rel="external">SQLAlchemy Reference</a>，在想是不是哪个参数没用对，看得要吐血了还是没有眉目；晚上和一个朋友聊天，他说他现在只用PostgreSQL，完全不用MySQL……</p>
+<p>这句话给了我灵感，我把数据库换成PostgreSQL，结果会怎样？</p>
+<p>上午来公司，安装PostgreSQL，熟悉语法，配置完后，拿原来代码直接一跑，我靠，直接成功。PostgreSQL没有像MySQL那样，创建索引时要求TEXT类型必须指定长度，我心里暗爽，即使MySQL报错1170问题无法解决，我可以用PostgreSQL继续完成我的股票分析大业啊。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/04/02/to-sql-error-fixed/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    </div>
+
+    <script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+    <script>
+        const btw = new BTWPlugin();
+        btw.init({
+            id: 'container-openwrite',
+            blogId: '17404-1571647601910-995',
+            name: '大西洋暖流',
+            qrcode: 'https://bigbigben.com/about/qrcode_for_dxy-nuanliu.jpg',
+            keyword: 'bigbigben',
+        });
+    </script>
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://bigbigben.com/2018/03/30/pandas-dataframe-to-sql-error/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1145,219 +1352,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://bigbigben.com/2018/03/15/kaggle-titanic/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="大西洋暖流">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="大西洋暖流">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/15/kaggle-titanic/" itemprop="url">Python数据分析之泰坦尼克沉船统计</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T11:16:52+08:00">
-                2018-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/03/15/kaggle-titanic/" class="leancloud_visitors" data-flag-title="Python数据分析之泰坦尼克沉船统计">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  304
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div id="container-openwrite">
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="/2018/03/15/kaggle-titanic/anthony-metcalfe-559306-unsplash.jpg" alt="Ship"></p>
-<p>（Photo by <a href="https://unsplash.com/photos/vnz2XeO2Y-g?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="external">Anthony Metcalfe</a> on <a href="https://unsplash.com/search/photos/titanic-ship?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="external">Unsplash</a>）</p>
-<p>前段时间看到<a href="https://github.com/jmportilla/Udemy-notes" target="_blank" rel="external"><strong>jmportilla</strong></a>这篇<a href="http://nbviewer.jupyter.org/github/jmportilla/Udemy-notes/blob/master/Intro%20to%20Data%20Projects%20-%20Titanic.ipynb" target="_blank" rel="external"><strong>Kaggle Titanic Challenge</strong></a>文章时，我把它实现了出来。</p>
-<p>目前处于学习阶段，只能通过大量动手实践，才能提升水平，免不了模仿别人。看着人家做出来的东西感觉很轻松，自己亲自动手做一遍才知道其实不容易。原文中注释都使用英文来写，很多地方不大好理解，本文添加了很多翻译，可能更容易理解一些。亲自动手做一遍，能够体会到Python数据分析的乐趣，也是促使你继续学习下去的动力。</p>
-<p><strong>数据准备</strong></p>
-<p>需要到<a href="https://www.kaggle.com/c/titanic/data" target="_blank" rel="external">Kaggle官网</a>下载泰坦尼克沉船数据。（需翻墙）</p>
-<p><strong>环境准备</strong></p>
-<p>macOS 10.11.6 + Anaconda Navigator 1.2.1 + Python 2.7.12<br>主要用到的是Python数据分析那一套包，只要安装Anaconda，那些包就自动全部包括在内。其次是安装Seaborn进行图形输出处理。</p>
-<p><strong>执行结果</strong></p>
-<p>用Anaconda里面Jupyter Notebook一步步写完整个过程后，将得到的Titanic.ipynb文件使用Jupyter NBViewer进行转换，得到<a href="http://nbviewer.jupyter.org/github/benbendemo/learning-python/blob/master/titanic/Titanic.ipynb" target="_blank" rel="external">泰坦尼克沉船数据</a>这个链接，观看更加直观。</p>
-
-          
-        
-      
-    </div>
-    </div>
-
-    <script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
-    <script>
-        const btw = new BTWPlugin();
-        btw.init({
-            id: 'container-openwrite',
-            blogId: '17404-1571647601910-995',
-            name: '大西洋暖流',
-            qrcode: 'https://bigbigben.com/about/qrcode_for_dxy-nuanliu.jpg',
-            keyword: 'bigbigben',
-        });
-    </script>
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1408,7 +1407,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">71</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1430,7 +1429,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">148</span>
+                  <span class="site-state-item-count">149</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1563,7 +1562,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">92.1k</span>
+    <span title="Site words total count">92.3k</span>
   
 </div>
 

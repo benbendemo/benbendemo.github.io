@@ -306,6 +306,214 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://bigbigben.com/2018/03/15/kaggle-titanic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="大西洋暖流">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大西洋暖流">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/15/kaggle-titanic/" itemprop="url">Python数据分析之泰坦尼克沉船统计</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T11:16:52+08:00">
+                2018-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/programming/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/15/kaggle-titanic/" class="leancloud_visitors" data-flag-title="Python数据分析之泰坦尼克沉船统计">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  304
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div id="container-openwrite">
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/2018/03/15/kaggle-titanic/anthony-metcalfe-559306-unsplash.jpg" alt="Ship"></p>
+<p>（Photo by <a href="https://unsplash.com/photos/vnz2XeO2Y-g?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="external">Anthony Metcalfe</a> on <a href="https://unsplash.com/search/photos/titanic-ship?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="external">Unsplash</a>）</p>
+<p>前段时间看到<a href="https://github.com/jmportilla/Udemy-notes" target="_blank" rel="external"><strong>jmportilla</strong></a>这篇<a href="http://nbviewer.jupyter.org/github/jmportilla/Udemy-notes/blob/master/Intro%20to%20Data%20Projects%20-%20Titanic.ipynb" target="_blank" rel="external"><strong>Kaggle Titanic Challenge</strong></a>文章时，我把它实现了出来。</p>
+<p>目前处于学习阶段，只能通过大量动手实践，才能提升水平，免不了模仿别人。看着人家做出来的东西感觉很轻松，自己亲自动手做一遍才知道其实不容易。原文中注释都使用英文来写，很多地方不大好理解，本文添加了很多翻译，可能更容易理解一些。亲自动手做一遍，能够体会到Python数据分析的乐趣，也是促使你继续学习下去的动力。</p>
+<p><strong>数据准备</strong></p>
+<p>需要到<a href="https://www.kaggle.com/c/titanic/data" target="_blank" rel="external">Kaggle官网</a>下载泰坦尼克沉船数据。（需翻墙）</p>
+<p><strong>环境准备</strong></p>
+<p>macOS 10.11.6 + Anaconda Navigator 1.2.1 + Python 2.7.12<br>主要用到的是Python数据分析那一套包，只要安装Anaconda，那些包就自动全部包括在内。其次是安装Seaborn进行图形输出处理。</p>
+<p><strong>执行结果</strong></p>
+<p>用Anaconda里面Jupyter Notebook一步步写完整个过程后，将得到的Titanic.ipynb文件使用Jupyter NBViewer进行转换，得到<a href="http://nbviewer.jupyter.org/github/benbendemo/learning-python/blob/master/titanic/Titanic.ipynb" target="_blank" rel="external">泰坦尼克沉船数据</a>这个链接，观看更加直观。</p>
+
+          
+        
+      
+    </div>
+    </div>
+
+    <script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+    <script>
+        const btw = new BTWPlugin();
+        btw.init({
+            id: 'container-openwrite',
+            blogId: '17404-1571647601910-995',
+            name: '大西洋暖流',
+            qrcode: 'https://bigbigben.com/about/qrcode_for_dxy-nuanliu.jpg',
+            keyword: 'bigbigben',
+        });
+    </script>
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://bigbigben.com/2018/03/14/python-metaclass/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1136,225 +1344,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://bigbigben.com/2018/02/10/python-smtplib/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="大西洋暖流">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="大西洋暖流">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/10/python-smtplib/" itemprop="url">Python+MySQLdb+Pandas+Smtplib发送邮件</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-10T16:23:35+08:00">
-                2018-02-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programming/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/02/10/python-smtplib/" class="leancloud_visitors" data-flag-title="Python+MySQLdb+Pandas+Smtplib发送邮件">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,431
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  6
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div id="container-openwrite">
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="/2018/02/10/python-smtplib/mia-baker-322559.jpg" alt="Cover Picture"></p>
-<p>(Photo by <a href="https://unsplash.com/photos/CuoMduHwRZY?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="external">Mia Baker</a> on <a href="https://unsplash.com/search/photos/mac?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="external">Unsplash</a>)</p>
-<p>今天看到又耳笔记这篇<a href="http://blog.51cto.com/youerning/1708941" target="_blank" rel="external"><strong>导出mysql数据，利用pandas生成excel文档，并发送邮件</strong></a>文章时，我决定把它实现出来。</p>
-<p>查资料、编码、测试、优化、添加注释……花了3个多小时将全部工作完成。现在整理出来，发布在这里。本文贴出的就是全部源代码，只要安装了相应的包，在Python 2.7环境下可以直接拿过去跑，本机测试邮件能够发送成功。没有MySQL和Pandas也不要紧，注释掉fetch_db和gen_xls函数，直接执行sendmsg也行。</p>
-<p>目前在正则表达式匹配邮箱地址那一环节还存有缺陷，对两个点或中划线在一起的邮箱地址（比如317…817@qq.com）无法剔除，日后有待完善，如果你有好的建议，欢迎给我留言。</p>
-<h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><p>macOS 10.11.6 + Anaconda Navigator 1.2.1+ Python 2.7.12 + Sublime 3.0</p>
-<h4 id="技术要点"><a href="#技术要点" class="headerlink" title="技术要点"></a>技术要点</h4><ul>
-<li>MySQLdb数据库连接</li>
-<li>Pandas DataFrame转换Excel文件</li>
-<li>正则表达式匹配邮箱</li>
-<li>smtplib协议实现原理</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/10/python-smtplib/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    </div>
-
-    <script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
-    <script>
-        const btw = new BTWPlugin();
-        btw.init({
-            id: 'container-openwrite',
-            blogId: '17404-1571647601910-995',
-            name: '大西洋暖流',
-            qrcode: 'https://bigbigben.com/about/qrcode_for_dxy-nuanliu.jpg',
-            keyword: 'bigbigben',
-        });
-    </script>
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1405,7 +1399,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">71</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1427,7 +1421,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">148</span>
+                  <span class="site-state-item-count">149</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1560,7 +1554,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">92.1k</span>
+    <span title="Site words total count">92.3k</span>
   
 </div>
 

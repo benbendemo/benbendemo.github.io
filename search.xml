@@ -3,6 +3,48 @@
   
     
     <entry>
+      <title><![CDATA[macOS常用小技巧]]></title>
+      <url>/2020/09/06/macos-tips/</url>
+      <content type="html"><![CDATA[<p>这是一个长期更新帖，用来记录本人使用macOS遇到过的问题以及应对问题的方法，欢迎查看以及勘误。</p>
+<h1 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h1><h2 id="macOS安装Homebrew报错"><a href="#macOS安装Homebrew报错" class="headerlink" title="macOS安装Homebrew报错"></a>macOS安装Homebrew报错</h2><p>问题：在macOS里输入命令直接安装Homebrew提示报错。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">shawn@xiaochangdeMacBook-Pro ~ % /bin/bash -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)</span>"</span></div><div class="line">curl: (7) Failed <span class="keyword">to</span> connect <span class="keyword">to</span> raw.githubusercontent.com<span class="built_in"> port </span>443:<span class="built_in"> Connection </span>refused</div></pre></td></tr></table></figure>
+<p>原因：这是GitHub的<code>raw.githubusercontent.com</code>域名解析被污染所致</p>
+<p>解决办法：修改hosts文件，使用IP地址读取文件内容</p>
+<ol>
+<li>查询真实IP地址</li>
+</ol>
+<p>在<a href="https://www.ipaddress.com/查询raw.githubusercontent.com的真实IP。" target="_blank" rel="external">https://www.ipaddress.com/查询raw.githubusercontent.com的真实IP。</a></p>
+<p><img src="/2020/09/06/macos-tips/Users/shawn/Nodejs/Hexo/ipaddress_search.jpg" alt=""></p>
+<ol>
+<li>修改hosts</li>
+</ol>
+<p>sudo vim /etc/hosts<br>添加如下内容：</p>
+<p>199.232.68.133 raw.githubusercontent.com</p>
+<ol>
+<li>在终端再次安装Homebrew可以成功</li>
+</ol>
+<h2 id="macOS安装IPython设置软连接"><a href="#macOS安装IPython设置软连接" class="headerlink" title="macOS安装IPython设置软连接"></a>macOS安装IPython设置软连接</h2><p>macOS使用pip3安装IPython成功后。<br>如果出现    <code>ipython command not found</code>，执行下面这条软连接命令即可。</p>
+<p>ln -s /Library/Frameworks/Python.framework/Versions/3.6/bin/ipython /usr/local/bin/</p>
+<h1 id="网络使用"><a href="#网络使用" class="headerlink" title="网络使用"></a>网络使用</h1><h2 id="查看IP地址"><a href="#查看IP地址" class="headerlink" title="查看IP地址"></a>查看IP地址</h2><p>macOS打开终端，使用如下命令可以查看本机IP地址。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ifconfig | grep "inet " | grep -v 127.0.0.1</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> 编程 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> macOS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[VSCode DebuggerforChrome解决跨域问题]]></title>
       <url>/2020/04/21/vscode-debugger-for-chrome-cors/</url>
       <content type="html"><![CDATA[<p>最近两次遇到跨域问题。</p>
@@ -456,9 +498,9 @@
             
             <tag> Python </tag>
             
-            <tag> Django </tag>
-            
             <tag> MySQL </tag>
+            
+            <tag> Django </tag>
             
         </tags>
         
@@ -530,9 +572,9 @@
             
             <tag> Python </tag>
             
-            <tag> Docker </tag>
-            
             <tag> Airflow </tag>
+            
+            <tag> Docker </tag>
             
             <tag> Docker-compose </tag>
             
@@ -645,9 +687,9 @@
             
             <tag> Python </tag>
             
-            <tag> Docker </tag>
-            
             <tag> Airflow </tag>
+            
+            <tag> Docker </tag>
             
             <tag> Kubernetes </tag>
             
@@ -1055,9 +1097,9 @@
         
         <tags>
             
-            <tag> Docker </tag>
-            
             <tag> Airflow </tag>
+            
+            <tag> Docker </tag>
             
             <tag> Kubernetes </tag>
             
@@ -4206,9 +4248,9 @@
         
         <tags>
             
-            <tag> 雪球 </tag>
-            
             <tag> 股票 </tag>
+            
+            <tag> 雪球 </tag>
             
         </tags>
         
