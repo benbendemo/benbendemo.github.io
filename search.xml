@@ -498,9 +498,9 @@
             
             <tag> Python </tag>
             
-            <tag> MySQL </tag>
-            
             <tag> Django </tag>
+            
+            <tag> MySQL </tag>
             
         </tags>
         
@@ -572,9 +572,9 @@
             
             <tag> Python </tag>
             
-            <tag> Airflow </tag>
-            
             <tag> Docker </tag>
+            
+            <tag> Airflow </tag>
             
             <tag> Docker-compose </tag>
             
@@ -687,9 +687,9 @@
             
             <tag> Python </tag>
             
-            <tag> Airflow </tag>
-            
             <tag> Docker </tag>
+            
+            <tag> Airflow </tag>
             
             <tag> Kubernetes </tag>
             
@@ -1097,9 +1097,9 @@
         
         <tags>
             
-            <tag> Airflow </tag>
-            
             <tag> Docker </tag>
+            
+            <tag> Airflow </tag>
             
             <tag> Kubernetes </tag>
             
@@ -4248,9 +4248,9 @@
         
         <tags>
             
-            <tag> 股票 </tag>
-            
             <tag> 雪球 </tag>
+            
+            <tag> 股票 </tag>
             
         </tags>
         
