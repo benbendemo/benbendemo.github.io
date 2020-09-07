@@ -46,4 +46,4 @@ jobs:
         echo ${{ github.workspace }}
         ls -al
     - name: Deply To OSS
-      run: ossutil cp -rf ${{ github.workspace }} oss://benbendemo/blog/
+      run: ossutil cp -rf ${{ github.workspace }} oss://benbendemo/
