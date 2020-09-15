@@ -606,7 +606,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  280
+                  340
                 </span>
               
 
@@ -668,6 +668,8 @@
 <p>ln -s /Library/Frameworks/Python.framework/Versions/3.6/bin/ipython /usr/local/bin/</p>
 <h1 id="网络使用"><a href="#网络使用" class="headerlink" title="网络使用"></a>网络使用</h1><h2 id="查看IP地址"><a href="#查看IP地址" class="headerlink" title="查看IP地址"></a>查看IP地址</h2><p>macOS打开终端，使用如下命令可以查看本机IP地址。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ifconfig | grep "inet " | grep -v 127.0.0.1</div></pre></td></tr></table></figure>
+<h2 id="macOS清理网络缓存"><a href="#macOS清理网络缓存" class="headerlink" title="macOS清理网络缓存"></a>macOS清理网络缓存</h2><p>最近使用”openconnect”连接Globalprotect VPN，总是提示<code>获取 WebVPN cookie 失败</code>。后来查到原因是系统网络缓存导致的问题，解决方法如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo ifconfig en0 down</div><div class="line"></div><div class="line">sudo route flush</div><div class="line"></div><div class="line">sudo ifconfig en0 up</div></pre></td></tr></table></figure>
 
           
         
